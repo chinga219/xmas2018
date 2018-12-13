@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en_US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		
+		<!--Insert title-->
+		<title>Merry Christmas!</title>	
+		
+		<link href="./src/css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="./src/style.css">
+		<link rel="stylesheet" type="text/css" href="./src/tooltipster.css">
+		<link rel="icon" type="image/png" href="./src/favicon-196x196.png" sizes="196x196">
+		<link rel="icon" type="image/png" href="./src/favicon-128.png" sizes="128x128">
+
+		<script type="text/javascript" src="./src/jquery.js.download"></script>
+		<script type="text/javascript" src="./src/jquery.tooltipster.min.js.download"></script>
+    	<script src="./src/snowfall.js.download"></script>
+
+
+<script>
+
+var prizeList = [
+    "Apple watch series 4 GPS+cellular",
+    "9.7-inch iPad 32GB wi-fi",
+    "小米空氣淨化器 2S",
+    "Google Home",
+    "LG PD261 無線流動相片打印機+相紙套裝 ",
+    "真。藍牙5.0無線雙體耳機 INN5",
+    "Western Digital WDBS4B0020B Portable Storage",
+    "Panasonic NI-FS470 (掛熨mini (950瓦特))",
+    "Akai XVC-BR22B 手提及直立 2合1吸塵機",
+    "雪糕火鍋經典套裝 + 補充裝",
+    "Logitech - MX ANYWHERE 2S 無線滑鼠",
+    "日本 H&C 最迷你除塵蟎機",
+    "Google - Chromecast 3 第三代 Screen Mirroring Dongle",
+    "Toffy 復古小焗爐",
+    "Philips HX6231 Sonicare Sonic Electric Toothbrush",
+    "TIC 智慧旅遊收納瓶套裝",
+    "Meross WiFi 智能定時遙控13A拖板",
+    "Smartclean 家用超聲波眼鏡清洗機",
+    "Pocket Wifi ZMI MF855",
+    "Maxcare 可折疊全身按摩暖墊",
+    "XPower WPD10 無線快充外置充電器",
+    "Nathome 可折疊按摩足浴盆",
+    "WACACO - MiniPresso NS手壓濃縮咖啡壺",
+    "SOTHING WarmBaby 搖擺陶瓷暖風機",
+    "Momax Q.Pad 雙充無線充電器 白色 UD10GSUKW",
+    "Panasonic MX-SS1 手提攪拌機",
+    "電競鍵盤 MSI KB-MIDS420 INTERCEPTOR DS4200",
+    "KableCARD 都市充電生存卡",
+    "Pisen 智能充電暖手寶"
+];
+    
+function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+}
+
+function generateRandom() {
+    var randomOrder = "";
+    shuffleArray(prizeList) 
+    for (var i = 0; i < prizeList.length; i++) {
+        randomOrder += (i+1) + " - " + prizeList[i] + "<br />";
+    }
+    $("#randomOrder").html(randomOrder);
+}
+
+
+
+$(document).ready(function() {
+		$('.tooltip').tooltipster({
+   		 trigger: 'click',
+   		 position: 'bottom',
+   		 offsetY: -15,
+   		 delay: 0,
+		 });
+ });
+
+$(document).ready(function(){
+    generateRandom();
+});
+
+
+
+
+		</script>
+	</head>
+
+	<body style="">
+		<div id="wrapper">
+			<img src="./src/header.png">
+
+      <div style="text-align: center;">
+          <div id="randomOrder" class="prizeList"></div>
+          <br />
+          <br />
+          <br />
+          <input style="padding: 40px;font-size: 30px;" type="button" value="Random" onclick="generateRandom()" />
+      </div>
+
+    </div>
+  </body>
+
+
+
+		
+<script type="text/javascript">
+		//default options
+		snowFall.snow(document.body);
+</script>
+
+
+<style>
+  .prizeList{
+    display: inline-block; 
+    text-align: left;
+    font-size:15px;
+    line-height:18px;
+  }
+
+</style>
+
