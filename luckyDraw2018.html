@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en_US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		
+		<!--Insert title-->
+		<title>Merry Christmas!</title>	
+		
+		<link href="./src/css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="./src/style.css">
+		<link rel="stylesheet" type="text/css" href="./src/tooltipster.css">
+		<link rel="icon" type="image/png" href="./src/favicon-196x196.png" sizes="196x196">
+		<link rel="icon" type="image/png" href="./src/favicon-128.png" sizes="128x128">
+
+		<script type="text/javascript" src="./src/jquery.js.download"></script>
+		<script type="text/javascript" src="./src/jquery.tooltipster.min.js.download"></script>
+    	<script src="./src/snowfall.js.download"></script>
+
+
+<script>
+
+var prizeList = [
+    "Apple watch series 4 GPS+cellular",
+    "9.7-inch iPad 32GB wi-fi",
+    "小米空氣淨化器 2S",
+    "Google Home",
+    "LG PD261 無線流動相片打印機+相紙套裝 ",
+    "真。藍牙5.0無線雙體耳機 INN5",
+    "Western Digital WDBS4B0020B Portable Storage",
+    "Panasonic NI-FS470 掛熨mini",
+    "Akai XVC-BR22B 手提及直立 2合1吸塵機",
+    "雪糕火鍋經典套裝 + 補充裝",
+    "Logitech - MX ANYWHERE 2S 無線滑鼠",
+    "日本 H&C 最迷你除塵蟎機",
+    "Google Chromecast 3 第三代 Screen Mirroring Dongle",
+    "Toffy 復古小焗爐",
+    "Philips HX6231 電動牙刷",
+    "TIC 智慧旅遊收納瓶套裝",
+    "Meross WiFi 智能定時遙控13A拖板",
+    "Smartclean 家用超聲波眼鏡清洗機",
+    "Pocket Wifi ZMI MF855",
+    "Maxcare 可折疊全身按摩暖墊",
+    "XPower WPD10 無線快充外置充電器",
+    "Nathome 可折疊按摩足浴盆",
+    "WACACO MiniPresso NS手壓濃縮咖啡壺",
+    "SOTHING WarmBaby 搖擺陶瓷暖風機",
+    "Momax Q.Pad 雙充無線充電器 白色 UD10GSUKW + $50惠康禮劵",
+    "Panasonic MX-SS1 手提攪拌機 + $50惠康禮劵",
+    "MSI KB-MIDS420 INTERCEPTOR DS4200 電競鍵盤 + $50惠康禮劵",
+    "KableCARD 都市充電生存卡 + $50惠康禮劵",
+    "Pisen 智能充電暖手寶 + $100惠康禮劵"
+];
+    
+function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+}
+
+function generateRandom() {
+    var randomOrder = "";
+    shuffleArray(prizeList) 
+    for (var i = 0; i < prizeList.length; i++) {
+        randomOrder += (i+1) + " - " + prizeList[i] + "<br />";
+    }
+    $("#randomOrder").html(randomOrder);
+}
+
+
+
+$(document).ready(function() {
+		$('.tooltip').tooltipster({
+   		 trigger: 'click',
+   		 position: 'bottom',
+   		 offsetY: -15,
+   		 delay: 0,
+		 });
+ });
+
+$(document).ready(function(){
+    generateRandom();
+});
+
+
+
+
+		</script>
+	</head>
+
+	<body style="">
+		<div id="wrapper">
+			<img src="./src/header.png">
+
+      <div style="text-align: center;">
+          <div id="randomOrder" class="prizeList"></div>
+          <div style="height:50px"></div>
+
+          <div class="centerer">
+            <div class="button" onclick="generateRandom()">Random</div>
+          </div>
+
+          <div style="height:100px"></div>
+
+
+      </div>
+
+    </div>
+  </body>
+
+
+
+		
+<script type="text/javascript">
+		//default options
+		snowFall.snow(document.body);
+</script>
+
+
+<style>
+  .prizeList{
+    display: inline-block; 
+    text-align: left;
+    font-size:15px;
+    line-height:18px;
+  }
+
+
+/* 
+
+Christmas Button 
+
+IE9+, Chrome, Firefox, Opera
+
+известные баги:
+# нет снежной шапки на input[type="button"]
+# Opera: на input не работает text-shadow
+# Opera: на input при клике border окрашивается в черный цвет
+# Opera: из-за конического градиента в фоне, в Опере сильно тормозят transitions (Opera 12.12)
+# IE + Opera: В Опере при нажатии на input, в ИЕ при нажатии на input и button текст кнопки смещается вправо вниз
+# IE9: не поддерживается transition и text-shadow
+
+P.S. через border-image не прокатило: не поддерживается ИЕ, в Опере частичная поддержка.
+
+*/
+
+
+.button {
+  display: inline-block;
+  -webkit-box-sizing:border-box;
+     -moz-box-sizing:border-box;
+          box-sizing:border-box;
+  min-width:100px;
+  padding: 22px 33px;
+  font-family: 'Calibri', cursive;
+  font-size: 26px;
+  line-height: 26px;
+  text-decoration: none;
+  color: #FFF;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.75);
+  background: #5e0d0c;
+  outline: none;
+  border-radius: 15px;
+  border: 1px solid #4c0300;
+  box-shadow:
+    inset 1px 1px 0px rgba(255,255,255,0.25), /* highlight */
+    inset 0 0 6px #a23227, /* inner glow */
+    inset 0 80px 80px -40px #ac3223, /* gradient */
+    1px 1px 3px rgba(0,0,0,0.75); /* shadow */
+    
+  position: relative;
+  overflow: visible; /* IE9 & 10 */
+  margin: 0 auto; 
+  cursor: pointer; 
+  text-align: center; 
+  position:absolute;
+  left:45%
+
+}
+
+.button::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -7px;
+  left: -3px;
+  right: 0;
+  height: 23px;
+  background: url() no-repeat 0 0,
+  url(./src/bg2.png) no-repeat 50% 0,
+  url(./src/bg3.png) no-repeat 100% 0;
+  
+}
+.button:hover {
+  background: #a61715;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.75), 0 0 40px #FFF;
+  box-shadow:
+    inset 1px 1px 0px rgba(255,255,255,0.25), /* highlight */
+    inset 0 0 6px #da3b2c, /* inner glow */
+    inset 0 80px 80px -40px #dd4330, /* gradient */
+    1px 1px 3px rgba(0,0,0,0.75); /* shadow */
+    
+}
+.button:focus {
+  outline: none; /*FF*/
+}
+.button:active {
+  box-shadow:
+    inset 1px 1px 0px rgba(255,255,255,0.25), /* highlight */
+    inset 0 0 6px #da3b2c, /* inner glow */
+    inset 0 80px 80px -40px #dd4330, /* gradient */
+    0px 1px 0px rgba(255,255,255,0.25); /* shadow */
+  
+}
+
+
+/* other styles */
+html, body {
+  width:100%;
+  height: 100%;
+}
+.bg {
+  width: 100%;
+  height: 100%;
+  display: table;
+  background: url(./src/bg4.svg);
+  background: -moz-radial-gradient(center, ellipse cover, #d35448 0%, #4a110c 100%); /* FF3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#d35448), color-stop(100%,#4a110c)); /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover, #d35448 0%,#4a110c 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover, #d35448 0%,#4a110c 100%); /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover, #d35448 0%,#4a110c 100%); /* IE10+ */
+  background: radial-gradient(ellipse at center, #d35448 0%,#4a110c 100%); /* W3C */
+}
+  .centerer {
+    margin:0 auto;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    /* noise image */
+    background-image: url();
+
+  }
+
+
+
+</style>
+
